@@ -4,6 +4,14 @@
 zip: github.com/fifthtry/simple-light-slides/archive/refs/heads/main.zip
 base: https://raw.githubusercontent.com/fifthtry/simple-light-slides/main
 
--- fpm.dependency: fifthtry.github.io/doc-site as ds
+-- fpm.dependency: fifthtry.github.io/package-doc as pd
+-- fpm.dependency: fifthtry.github.io/slides
+-- fpm.dependency: fifthtry.github.io/inter
 
--- fpm.auto-import: ds
+
+-- fpm.auto-import: pd
+-- fpm.auto-import: fpm
+-- fpm.auto-import: pd/typography as tf
+-- fpm.auto-import: pd/code-block as cb
+-- fpm.auto-import: pd/forest-theme as ft
+-- fpm.auto-import: fifthtry.github.io/simple-light-slides/FPM/config
