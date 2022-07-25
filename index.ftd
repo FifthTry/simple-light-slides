@@ -28,7 +28,8 @@ weight: 400
 
 
 
--- ft.page: 
+-- ft.page:
+id: page 
 
 -- pd.package: Simple Light Slides
 name: fifthtry.github.io/simple-light-slides
@@ -42,7 +43,7 @@ lang: ftd
 \-- fpm.dependency: fifthtry.github.io/simple-light-slides as slides
 \-- fpm.auto-import: slides
 
--- pd.hidden-code: Usage
+-- pd.hidden-code: Basic usage example
  
 \-- slides.total: <total count of slides - integer>
 \-- slides.presentation:
@@ -110,6 +111,7 @@ number: 11
 
 
 
+
 -- presentation:
 embed: true
 
@@ -171,6 +173,24 @@ subtitle: Add subtitle here
 
 -- blank: 
 number: 11
+
+
+
+-- container: page
+
+-- ftd.column:
+margin-top: $fpm.space.space-5
+
+
+-- tf.markdown:
+
+Click on `full-screen` mode `squre` icon to see full-screen view. On `full-screen`
+mode to navigate slides press `left` OR `right` arrow keys to move to left OR 
+right slide. 
+
+Press `esc` key to exit full screen view.
+
+
 
 
 
