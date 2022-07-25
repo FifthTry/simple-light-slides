@@ -2,8 +2,10 @@
 -- import: fifthtry.github.io/simple-light-slides as slides
 
 -- slides.total: 11
+-- slides.show-full-screen: true
+
+
 -- slides.presentation:
-embed: false
 
 -- slides.title-slide: Add slide title here
 number: 1

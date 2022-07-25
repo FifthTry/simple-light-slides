@@ -444,11 +444,12 @@ if: not $is-mobile
 id: main
 height: fill
 width: fill
+padding-top if $show-full-screen: $fpm.space.space-6
+margin-top if not $show-full-screen: 24
 
 --- ftd.column:
 width: fill
-padding-top if $show-full-screen: 36
-margin-top if not $show-full-screen: -36
+align: top
 id: description
 
 --- ftd.column:
@@ -966,10 +967,9 @@ id: inner
 if: not $embed
 id: content
 align: center
-width: 1000
+width: fill
 height: fill
-padding-horizontal: $fpm.space.space-5
-move-left: 150
+max-width: 1200
 
 --- container: inner
 
@@ -1003,6 +1003,8 @@ position: center
 --- container: hidden-screen-container
 
 --- panel:
+if: $embed
+
 
 
 
