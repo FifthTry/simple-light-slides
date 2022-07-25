@@ -1,43 +1,116 @@
 -- import: fifthtry.github.io/simple-light-slides/assets
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/package-doc/typography as tf
--- import: fifthtry.github.io/slides as slide
+
+-- integer total: 11
+
+-- boolean show-full-screen: false
+
+-- integer slide-no: 1
+
+-- boolean is-mobile: false
+
+-- is-mobile: true
+if: $ftd.device == mobile
+
+-- ftd.font-size big-font-desktop:
+line-height: 84
+size: 64
+letter-spacing: 1
+
+-- ftd.type big-font: $fpm.font-display
+desktop: $big-font-desktop
+mobile: $big-font-desktop
+xl: $big-font-desktop
+weight: 400
 
 
--- slide.slide-no: 1
 
 
--- ft.page: Simple Light Presentation
 
-Simple Light is a light theme for presentation.
+-- ft.page: 
 
 -- pd.package: Simple Light Slides
 name: fifthtry.github.io/simple-light-slides
 
-To use Simple Light on your web package, add below into `FPM.ftd` file:
+To use Simple Light presentation theme on your `FTD` web package, add below 
+lines into `FPM.ftd` file:
 
 -- cb.code:
 lang: ftd
 
-\-- fpm.dependency: fifthtry.github.io/simple-light-slides
-\-- fpm.auto-import: fifthtry.github.io/simple-light-slides
+\-- fpm.dependency: fifthtry.github.io/simple-light-slides as slides
+\-- fpm.auto-import: slides
 
--- tf.markdown:
+-- pd.hidden-code: Usage
+ 
+\-- slides.total: <total count of slides - integer>
+\-- slides.presentation:
+embed: <boolean true(if embeded inside page) - default false>
 
-Once you add above lines into your web package, add `simple-light-slides` into 
-your `.ftd` file:
+\-- slides.title-slide: Add slide title here
+number: 1
+subtitle: Add subtitle here
 
--- cb.code: Basic usage example:
-lang: ftd
+\-- slides.section-header: Add section header here
+number: 2
 
-\-- slide.presentation:
-total: 11
-embed: true
+\-- slides.title-and-body: Add slide title here
+number: 3
+Add body here...
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+- sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+
+\-- slides.title-and-2-columns: Add slide title here
+number: 4
+
+\--- slides.left-column:
+image-left: $assets.files.image-placeholder.png
+
+\--- slides.right-column:
+
+Add body here...
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+- sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+
+\-- slides.title-only: Add slide title here
+number: 5
+image: $assets.files.image-placeholder.png
+
+\-- slides.one-column-text: Add slide title here
+number: 6
+image: $assets.files.image-placeholder.png
+
+orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+
+\-- slides.main-point: Add slide title here
+number: 7
+
+\-- slides.section-title-and-description: Add slide title here
+number: 8
+subtitle: Add subtitle here
+image: $assets.files.image-placeholder.png
+
+\-- slides.caption: Add caption here
+number: 9
+image: $assets.files.image-placeholder.png
+
+\-- slides.big-number: Add big caption here
+number: 10
+subtitle: Add subtitle here
+
+\-- slides.blank: 
+number: 11
 
 
 
--- slide.presentation:
-total: 11
+
+-- presentation:
 embed: true
 
 -- title-slide: Add slide title here
@@ -67,11 +140,9 @@ Add body here...
 - sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
 
-
 -- title-only: Add slide title here
 number: 5
 image: $assets.files.image-placeholder.png
-
 
 -- one-column-text: Add slide title here
 number: 6
@@ -81,7 +152,6 @@ orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in
 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-
 
 -- main-point: Add slide title here
 number: 7
@@ -94,7 +164,6 @@ image: $assets.files.image-placeholder.png
 -- caption: Add caption here
 number: 9
 image: $assets.files.image-placeholder.png
-
 
 -- big-number: Add big caption here
 number: 10
@@ -112,15 +181,14 @@ number: 11
 
 
 
-
 -- ftd.column title-slide:
 caption title:
 string subtitle:
 optional integer number:
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.row:
 height: fill
@@ -148,7 +216,6 @@ text: $subtitle
 role: $fpm.type.heading-medium
 color: $fpm.color.main.background.step-1
 align: center
-text-align: 
 
 
 
@@ -162,10 +229,10 @@ text-align:
 -- ftd.row section-header:
 caption title:
 optional integer number:
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.column:
 width: fill
@@ -195,10 +262,10 @@ width: fill
 caption title:
 body body:
 optional integer number:
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.row:
 height: fill
@@ -238,10 +305,10 @@ width: fill
 -- ftd.column title-and-2-columns:
 caption title:
 optional integer number:
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 open: true
 append-at: text-contain
 
@@ -290,8 +357,8 @@ width: fill
 optional body body:
 optional ftd.image-src image-left: 
 width: fill
-margin-right if not $slide.is-mobile: 36
-margin-bottom if $slide.is-mobile: 24
+margin-right: 36
+margin-bottom if $is-mobile: 24
 
 --- ftd.text:
 if: $body is not null
@@ -314,11 +381,11 @@ height: auto
 
 
 
+
 -- ftd.column right-column:
 optional body body:
 optional ftd.image-src image-right: 
 width: fill
-
 
 --- ftd.text:
 if: $body is not null
@@ -347,20 +414,21 @@ caption title:
 optional ftd.image-src image:
 optional integer number:
 boolean center-image: false
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.row:
+if: not $is-mobile
 id: main
 height: fill
 width: fill
 
 --- ftd.column:
 width: fill
-padding-top if $slide.show-full-screen: 36
-margin-top if not $slide.show-full-screen: -36
+padding-top if $show-full-screen: 36
+margin-top if not $show-full-screen: -36
 id: description
 
 --- ftd.column:
@@ -368,7 +436,7 @@ width: fill
 height: fill
 align: center
 max-width: 1200 
-max-width if $slide.is-mobile: fill 
+max-width if $is-mobile: fill 
 
 --- ftd.text: $title
 role: $fpm.type.heading-hero
@@ -383,8 +451,44 @@ width: auto
 align if $center-image: center
 max-width: auto
 height: auto
-max-height if not $slide.is-mobile: 400
-max-height if $slide.is-mobile: 320
+max-height if not $is-mobile: 400
+max-height if $is-mobile: 320
+
+--- container: ftd.main
+
+--- ftd.row:
+if: $is-mobile
+id: main
+height: fill
+width: fill
+
+--- ftd.column:
+width: fill
+padding-top if $show-full-screen: 36
+id: description
+
+--- ftd.column:
+width: fill
+height: fill
+align: center
+max-width: 1200 
+max-width if $is-mobile: fill 
+
+--- ftd.text: $title
+role: $fpm.type.heading-hero
+color: $fpm.color.main.background.step-1
+width: fill
+margin-bottom: 24
+
+--- ftd.image:
+if: $image is not null
+src: $image
+width: auto
+align if $center-image: center
+max-width: auto
+height: auto
+max-height if not $is-mobile: 400
+max-height if $is-mobile: 320
 
 
 
@@ -400,10 +504,10 @@ caption title:
 body body:
 optional ftd.image-src image:
 optional integer number:
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.row:
 height: fill
@@ -439,7 +543,7 @@ color: $fpm.color.main.background.step-1
 
 --- ftd.column:
 width: fill
-align: top
+align: center
 
 --- ftd.image:
 if: $image is not null
@@ -458,11 +562,11 @@ height: fill
 
 -- ftd.row main-point:
 optional integer number: 
-if: $slide.slide-no == $number
+if: $slide-no == $number
 caption title:
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.column:
 width: fill
@@ -494,10 +598,10 @@ string subtitle:
 optional body body:
 optional ftd.image-src image:
 optional integer number:
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.row:
 height: fill
@@ -566,8 +670,8 @@ optional ftd.image-src image:
 width: fill
 height: fill
 optional integer number:
-if: $slide.slide-no == $number
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+if: $slide-no == $number
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.row:
 width: fill
@@ -585,6 +689,7 @@ width: fill
 height: fill
 align: center
 max-width: 1200
+id: image-container
 
 --- ftd.column:
 width: fill
@@ -593,12 +698,24 @@ align: left
 max-width: 740
 
 --- ftd.image:
+if: not $is-mobile
 src: $image
 width: fill
-max-width if not $slide.show-full-screen: 600
-max-width if $slide.show-full-screen: 800
+max-width if not $show-full-screen: 600
+max-width if $show-full-screen: 800
+max-width if $is-mobile: 600
 height: auto
-margin-top: 24
+
+--- container: image-container
+
+--- ftd.image:
+if: $is-mobile
+src: $image
+width: fill
+max-width: 600
+height: auto
+
+--- container: image-container
 
 --- ftd.text: $title
 role: $fpm.type.copy-large
@@ -647,10 +764,10 @@ margin-bottom: 36
 caption title:
 string subtitle:
 optional integer number:
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.row:
 height: fill
@@ -668,7 +785,7 @@ spacing: 36
 max-width: 1200
 
 --- ftd.text: $title
-role: $slide.big-font
+role: $big-font
 color: $fpm.color.main.background.step-1
 align: center
 text-align: center
@@ -691,10 +808,10 @@ text-align: center
 
 -- ftd.column blank:
 optional integer number:
-if: $slide.slide-no == $number
+if: $slide-no == $number
 width: fill
 height: fill
-padding-horizontal if $slide.is-mobile: $fpm.space.space-4
+padding-horizontal if $is-mobile: $fpm.space.space-4
 
 --- ftd.row:
 height: fill
@@ -710,3 +827,368 @@ width: fill
 align: center
 spacing: 36
 max-width: 1200
+
+
+
+
+
+
+
+
+
+
+-- ftd.column mobile-overlay:
+height: calc 100% - 0px
+width: fill
+anchor: window
+position: center
+background-color: $fpm.color.main.background.step-1
+z-index: 10
+$on-click$: $show-full-screen = false
+
+
+
+
+
+
+
+
+
+
+-- ftd.column presentation:
+boolean embed: false
+optional ftd.image-src bg-image:
+background-color: $white
+integer padding: 0
+width: fill
+height: fill
+open: true
+append-at: content
+id: presentation
+
+--- mobile-overlay:
+if: $show-full-screen
+if: $is-mobile
+
+--- container: ftd.main
+
+--- ftd.column:
+if: $show-full-screen
+anchor: window
+top:0
+left: 0
+height: calc 100% - 0px
+height if $is-mobile: auto
+width: calc 100% - 0px
+background-color: $white
+position if $is-mobile: center
+z-index: 99999
+id: full-screen-container
+$on-global-key[esc]$: $show-full-screen = false
+
+--- container: full-screen-container
+
+--- ftd.column:
+id: switch-container
+width: fill
+height: fill
+height if $is-mobile: auto
+padding if not $is-mobile: $padding
+
+--- ftd.column:
+if: not $is-mobile
+id: content
+align: center
+width: fill
+height: fill
+background-image if $bg-image is not null: $bg-image
+background-color if $bg-image is null: $white
+
+--- container: switch-container
+
+--- ftd.column:
+if: $is-mobile
+height: 200
+width: fill
+
+--- ftd.column:
+id: content
+width: fill
+height: 510
+padding-horizontal: $fpm.space.space-5
+scale: 0.4
+min-width: 802
+anchor: parent
+position: center
+
+--- container: full-screen-container
+
+--- panel:
+
+--- container: ftd.main
+
+--- ftd.column:
+if: not $show-full-screen
+width: fill
+height: fill
+id: hidden-screen-container
+background-image if $bg-image is not null: $bg-image
+background-color if $bg-image is null: $white
+
+--- ftd.column:
+if: not $is-mobile
+width: fill
+height if not $embed: fill
+height if $embed: 350
+id: inner
+
+--- ftd.column:
+if: not $embed
+id: content
+align: center
+width: 1000
+height: fill
+padding-horizontal: $fpm.space.space-5
+move-left: 150
+
+--- container: inner
+
+--- ftd.column:
+if: $embed
+id: content
+align: center
+width: 1000
+scale: 0.6
+height: 290
+padding-horizontal: $fpm.space.space-5
+move-left: 150
+
+--- container: hidden-screen-container
+
+--- ftd.column:
+if: $is-mobile
+height: 200
+width: fill
+
+--- ftd.column:
+id: content
+width: fill
+height: 450
+padding-horizontal: $fpm.space.space-5
+scale: 0.4
+min-width: 802
+anchor: parent
+position: center
+
+--- container: hidden-screen-container
+
+--- panel:
+
+
+
+
+
+
+
+
+
+
+-- ftd.column panel:
+width: fill
+boolean active: false
+boolean show-left: false
+boolean show-right: false
+background-color: $fpm.color.main.background.step-2
+
+--- ftd.column:
+if: not $show-full-screen
+id: full-screen
+align: center
+anchor: parent
+right: 16
+bottom: 8
+
+--- ftd.image:
+if: not $active
+src: $assets.files.controls-img.full-screen.svg
+$on-click$: $show-full-screen = true
+$on-global-key[ctrl-f]$: $show-full-screen = true
+$on-mouse-enter$: $active = true
+$on-mouse-leave$: $active = false
+
+--- container: full-screen
+
+--- ftd.image:
+if: $active
+src: $assets.files.controls-img.full-screen-active.svg
+$on-click$: $show-full-screen = true
+$on-global-key[ctrl-f]$: $show-full-screen = true
+$on-mouse-enter$: $active = true
+$on-mouse-leave$: $active = false
+
+--- container: ftd.main
+
+--- ftd.row:
+if: not $is-mobile
+align: center
+id: slots
+
+--- ftd.row:
+if: not $show-full-screen
+id: left-arrow
+align: center
+
+--- ftd.image:
+if: not $show-left
+src: $assets.files.controls-img.left.svg
+$on-click$: decrement $slide-no clamp 1 $total
+width: 24
+height: 24
+align: center
+$on-mouse-enter$: $show-left = true
+$on-mouse-leave$: $show-left = false
+
+--- container: left-arrow
+
+--- ftd.image:
+if: $show-left
+src: $assets.files.controls-img.left-active.svg
+$on-click$: decrement $slide-no clamp 1 $total
+width: 24
+height: 24
+align: center
+$on-mouse-enter$: $show-left = true
+$on-mouse-leave$: $show-left = false
+
+--- container: slots
+
+--- ftd.row:
+if: $show-full-screen
+$on-global-key[left]$: decrement $slide-no by 1  clamp 1 $total
+
+
+--- container: slots
+
+--- show-controls:
+if: not $show-full-screen
+align: center
+
+--- container: slots
+
+--- ftd.row:
+if: not $show-full-screen
+id: right-arrow
+align: center
+
+--- ftd.image:
+if: not $show-right
+src: $assets.files.controls-img.right.svg
+$on-click$: increment $slide-no clamp 1 $total
+width: 24
+align: center
+$on-mouse-enter$: $show-right = true
+$on-mouse-leave$: $show-right = false
+
+--- container: right-arrow
+
+--- ftd.image:
+if: $show-right
+src: $assets.files.controls-img.right-active.svg
+$on-click$: increment $slide-no clamp 1 $total
+width: 24
+align: center
+$on-mouse-enter$: $show-right = true
+$on-mouse-leave$: $show-right = false
+
+--- container: ftd.main
+
+--- ftd.row:
+if: $is-mobile
+align: center
+id: slots
+
+--- ftd.row:
+id: left-arrow
+align: center
+
+--- ftd.image:
+src: $assets.files.controls-img.left.svg
+$on-click$: decrement $slide-no clamp 1 $total
+width: 24
+height: 24
+align: center
+
+--- container: slots
+
+--- ftd.row:
+$on-global-key[left]$: decrement $slide-no by 1  clamp 1 $total
+
+--- show-controls:
+align: center
+
+--- container: slots
+
+--- ftd.row:
+id: right-arrow
+align: center
+
+--- ftd.image:
+src: $assets.files.controls-img.right.svg
+$on-click$: increment $slide-no clamp 1 $total
+width: 24
+align: center
+$on-mouse-enter$: $show-right = true
+$on-mouse-leave$: $show-right = false
+
+--- container: slots
+
+--- ftd.row:
+if: $show-full-screen
+$on-global-key[right]$: increment $slide-no  by 1 clamp 1 $total
+
+
+
+
+
+
+
+
+
+
+-- ftd.row show-controls:
+padding: 11
+border-radius: 10
+spacing: 8
+min-width: 90
+
+--- ftd.integer: $slide-no
+align: center
+width: fill
+text-align: center
+
+--- ftd.text: of 
+align: center
+width: fill
+text-align: center
+
+--- ftd.integer: $total
+align: center
+width: fill
+text-align: center
+
+
+
+
+
+
+
+
+
+
+-- ftd.color black:
+light: black
+dark: black
+
+-- ftd.color white:
+light: white
+dark: white
