@@ -445,7 +445,7 @@ id: main
 height: fill
 width: fill
 padding-top if $show-full-screen: $fpm.space.space-6
-margin-top if not $show-full-screen: 24
+margin-top if not $show-full-screen: -24
 
 --- ftd.column:
 width: fill
