@@ -1,45 +1,41 @@
 -- import: fifthtry.github.io/simple-light-slides/assets
 -- import: fifthtry.github.io/simple-light-slides as slides
+-- import: fifthtry.github.io/slides as slide
 
--- slides.total: 11
+-- string right-body:
+
+Add body here...
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+- sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+
 -- slides.show-full-screen: true
 
+-- slide.presentation:
+bg-color: $fpm.color.main.text-strong
+embed: false
+current: 1
 
--- slides.presentation:
-
--- slides.title-slide: Add slide title here
-number: 1
+--- slides.title-slide: Add slide title here
 subtitle: Add subtitle here
 
--- slides.section-header: Add section header here
-number: 2
+--- slides.section-header: Add section header here
 
--- slides.title-and-body: Add slide title here
-number: 3
-Add body here...
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-- sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-
--- slides.title-and-2-columns: Add slide title here
-number: 4
-
---- slides.left-column:
-image-left: $assets.files.image-placeholder.png
-
---- slides.right-column:
+--- slides.title-and-body: Add slide title here
 
 Add body here...
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 - sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
 
--- slides.title-only: Add slide title here
-number: 5
+--- slides.title-and-2-columns: Add slide title here
+left-image: $assets.files.image-placeholder.png
+right-body: $right-body
+
+--- slides.title-only: Add slide title here
 image: $assets.files.image-placeholder.png
 
--- slides.one-column-text: Add slide title here
-number: 6
+--- slides.one-column-text: Add slide title here
 image: $assets.files.image-placeholder.png
 
 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -47,21 +43,18 @@ orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in
 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 
--- slides.main-point: Add slide title here
-number: 7
+--- slides.main-point: Add slide title here
 
--- slides.section-title-and-description: Add slide title here
-number: 8
+
+--- slides.section-title-and-description: Add slide title here
 subtitle: Add subtitle here
 image: $assets.files.image-placeholder.png
 
--- slides.caption: Add caption here
-number: 9
+--- slides.caption: Add caption here
 image: $assets.files.image-placeholder.png
 
--- slides.big-number: Add big caption here
-number: 10
+--- slides.big-number: Add big caption here
 subtitle: Add subtitle here
 
--- slides.blank: 
-number: 11
+--- slides.blank: 
+
