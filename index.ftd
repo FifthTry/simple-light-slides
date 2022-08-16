@@ -3,8 +3,6 @@
 -- import: fifthtry.github.io/package-doc/typography as tf
 -- import: fifthtry.github.io/slides as slides 
 
--- boolean show-full-screen: false
-
 -- boolean is-mobile: false
 
 -- is-mobile: true
@@ -44,7 +42,7 @@ lang: ftd
  
 
 \-- slide.presentation:
-embed: <boolean true(if embeded inside page) - default false>
+embed: <boolean false(if full screen mode) - default true>
 current : integer
 
 \--- slides.title-slide: Add slide title here
@@ -100,8 +98,7 @@ subtitle: Add subtitle here
 
 -- slides.presentation:
 bg-color: $fpm.color.main.text-strong
-embed: true
-current: 1
+show-full-screen: false
 
 --- title-slide: Add slide title here
 subtitle: Add subtitle here
@@ -161,6 +158,18 @@ right slide.
 
 Press `esc` key to exit full screen view.
 
+
+
+
+
+
+
+
+
+
+-- slides.presentation light-presentation:
+bg-color: $fpm.color.main.text-strong
+show-full-screen: false
 
 
 
@@ -562,8 +571,8 @@ if: not $is-mobile
 id: main
 height: fill
 width: fill
-padding-top if $show-full-screen: $fpm.space.space-6
-margin-top if not $show-full-screen: -24
+padding-top if $PARENT.show-full-screen: $fpm.space.space-6
+margin-top if not $PARENT.show-full-screen: -24
 
 --- ftd.column:
 width: fill
@@ -606,7 +615,7 @@ width: fill
 
 --- ftd.column:
 width: fill
-padding-top if $show-full-screen: 36
+padding-top if $PARENT.show-full-screen: 36
 id: description
 
 --- ftd.column:
@@ -741,14 +750,13 @@ height: fill
 
 
 -- ftd.row main-point:
-optional string title:
+caption title:
 optional integer move-top:
 optional integer move-bottom:
 boolean move-center: true
 optional string font-size:
 optional integer number: 
 if: $PARENT.current == $SIBLING-INDEX
-caption title:
 width: fill
 height: fill
 padding-horizontal if $is-mobile: $fpm.space.space-4
@@ -930,8 +938,8 @@ max-width: 740
 if: not $is-mobile
 src: $image
 width: fill
-max-width if not $show-full-screen: 600
-max-width if $show-full-screen: 800
+max-width if not $PARENT.show-full-screen: 600
+max-width if $PARENT.show-full-screen: 800
 max-width if $is-mobile: 600
 height: auto
 
