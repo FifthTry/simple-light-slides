@@ -272,8 +272,8 @@ caption title:
 body body:
 optional integer move-top:
 optional integer move-bottom:
-boolean move-center: true
-string font-size: regular
+boolean move-center: false
+string font-size: large
 optional integer number:
 if: $PARENT.current == $SIBLING-INDEX
 width: fill
@@ -286,8 +286,8 @@ width: fill
 --- ftd.column:
 width: fill
 id: description
-padding-top: 36
-align: center
+padding-top if not $move-center: 36
+align if $move-center: center
 
 --- ftd.column:
 width: fill
@@ -296,7 +296,7 @@ spacing: 36
 max-width: 1200
 
 --- ftd.column:
-align: center
+align: top
 spacing: 32
 
 --- ftd.text: $title
@@ -355,7 +355,7 @@ caption title:
 optional integer move-top:
 optional integer move-bottom:
 boolean move-center: false
-string font-size: small
+string font-size: large
 optional integer number:
 optional body left-body:
 optional ftd.image-src left-image:
@@ -371,8 +371,8 @@ width: fill
 
 --- ftd.column:
 width: fill
-padding-top if not $move-center: 24
-align: center
+padding-top if not $move-center: 36
+align if $move-center: center
 
 --- ftd.column:
 width: fill
@@ -558,7 +558,7 @@ caption title:
 optional ftd.image-src image:
 optional integer move-top:
 optional integer move-bottom:
-boolean move-center: true
+boolean move-center: false
 optional string font-size:
 optional integer number:
 boolean center-image: false
@@ -571,12 +571,11 @@ if: not $is-mobile
 id: main
 height: fill
 width: fill
-padding-top if $PARENT.show-full-screen: $fpm.space.space-6
-margin-top if not $PARENT.show-full-screen: -24
+margin-top if not $PARENT.show-full-screen: -64
 
 --- ftd.column:
 width: fill
-padding-top if not $move-center: 24
+padding-top if not $move-center: 36
 align if $move-center: center
 id: description
 
@@ -658,7 +657,7 @@ body body:
 optional ftd.image-src image:
 optional integer move-top:
 optional integer move-bottom:
-boolean move-center: true
+boolean move-center: false
 optional string font-size: regular
 optional integer number:
 if: $PARENT.current == $SIBLING-INDEX
@@ -672,7 +671,7 @@ width: fill
 
 --- ftd.column:
 width: fill
-padding-top if not $move-center: 24
+padding-top if not $move-center: 36
 align if $move-center: center
 
 --- ftd.row:
@@ -687,6 +686,7 @@ max-width: 1200
 height: fill
 width: fill
 align: top
+spacing: 32
 
 --- ftd.text: $title
 role: $fpm.type.heading-hero
@@ -765,7 +765,7 @@ padding-horizontal if $is-mobile: $fpm.space.space-4
 width: fill
 id: description
 align if $move-center: center
-padding-top if not $move-center: 64
+padding-top if not $move-center: 36
 
 --- ftd.column:
 width: fill
@@ -807,7 +807,7 @@ width: fill
 --- ftd.column:
 width: fill
 align if $move-center: center
-padding-top if not $move-center: 64
+padding-top if not $move-center: 36
 
 --- ftd.row:
 width: fill
