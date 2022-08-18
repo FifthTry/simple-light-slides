@@ -316,7 +316,7 @@ role: $fpm.type.fine-print
 --- ftd.text:
 if: $font-size == regular
 text: $body
-role: $fpm.type.copy-tight
+role: $fpm.type.copy-large
 color: $fpm.color.main.background.step-1
 margin-top if $move-top is not null: $move-top
 margin-bottom if $move-bottom is not null: $move-bottom
@@ -325,7 +325,7 @@ width: fill
 --- ftd.text:
 if: $font-size == medium
 text: $body
-role: $fpm.type.copy-large
+role: $fpm.type.label-big
 color: $fpm.color.main.background.step-1
 margin-top if $move-top is not null: $move-top
 margin-bottom if $move-bottom is not null: $move-bottom
@@ -334,7 +334,7 @@ width: fill
 --- ftd.text:
 if: $font-size == large
 text: $body
-role: $fpm.type.label-big
+role: $fpm.type.heading-small
 color: $fpm.color.main.background.step-1
 margin-top if $move-top is not null: $move-top
 margin-bottom if $move-bottom is not null: $move-bottom
