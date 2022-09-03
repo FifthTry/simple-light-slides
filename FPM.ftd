@@ -2,7 +2,7 @@
 
 -- fpm.package: fifthtry.github.io/simple-light-slides
 zip: github.com/fifthtry/simple-light-slides/archive/refs/heads/main.zip
-base: https://raw.githubusercontent.com/fifthtry/simple-light-slides/main
+download-base-url: https://raw.githubusercontent.com/fifthtry/simple-light-slides/main
 
 -- fpm.dependency: fifthtry.github.io/package-doc as pd
 -- fpm.dependency: fifthtry.github.io/inter
