@@ -5,8 +5,8 @@
 
 
 -- slide.presentation:
-bg-color: $fpm.color.main.background.step-1
-overlay-bg-color: $fpm.color.main.text-strong
+bg-color: $fpm.color.main.text-strong
+overlay-bg-color: $fpm.color.main.background.step-1
 embed: false
 show-full-screen: true
 current: 1
@@ -35,11 +35,8 @@ image: $assets.files.image-placeholder.png
 number: 6
 image: $assets.files.image-placeholder.png
 
-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-
+orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna 
 --- slides.main-point: Add slide title here
 number: 7
 
